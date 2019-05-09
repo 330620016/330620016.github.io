@@ -3,20 +3,21 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Proxy代理 | AmeChin</title>
+  <title>Proxy代理、http协议、URI与URL | AmeChin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是代理？代理proxy：特殊的网络服务，允许一个网络终端（客户端）与另一个网络终端（服务器）进行非直接连接。  有什么用？ 通过设置缓存区，提高访问速度，其他用户访问相同信息时直接从缓冲区取出。 控制对内部资源的访问。 过滤内容，防御对代理服务器两边的攻击性访问。 隐藏真实IP，通过代理服务器隐藏自己的IP。 突破自身IP访问限制。 突破内容过滤机制限制。">
+  <meta name="description" content="什么是代理？代理proxy：特殊的网络服务，允许一个网络终端（客户端）与另一个网络终端（服务器）进行非直接连接。  有什么用？ 通过设置缓存区，提高访问速度，其他用户访问相同信息时直接从缓冲区取出。 控制对内部资源的访问。 过滤内容，防御对代理服务器两边的攻击性访问。 隐藏真实IP，通过代理服务器隐藏自己的IP。 突破自身IP访问限制。 突破内容过滤机制限制。   Http超文本传输协议用于从万维">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Proxy代理">
+<meta property="og:title" content="Proxy代理、http协议、URI与URL">
 <meta property="og:url" content="http://yoursite.com/2019/05/09/Proxy代理/index.html">
 <meta property="og:site_name" content="AmeChin">
-<meta property="og:description" content="什么是代理？代理proxy：特殊的网络服务，允许一个网络终端（客户端）与另一个网络终端（服务器）进行非直接连接。  有什么用？ 通过设置缓存区，提高访问速度，其他用户访问相同信息时直接从缓冲区取出。 控制对内部资源的访问。 过滤内容，防御对代理服务器两边的攻击性访问。 隐藏真实IP，通过代理服务器隐藏自己的IP。 突破自身IP访问限制。 突破内容过滤机制限制。">
+<meta property="og:description" content="什么是代理？代理proxy：特殊的网络服务，允许一个网络终端（客户端）与另一个网络终端（服务器）进行非直接连接。  有什么用？ 通过设置缓存区，提高访问速度，其他用户访问相同信息时直接从缓冲区取出。 控制对内部资源的访问。 过滤内容，防御对代理服务器两边的攻击性访问。 隐藏真实IP，通过代理服务器隐藏自己的IP。 突破自身IP访问限制。 突破内容过滤机制限制。   Http超文本传输协议用于从万维">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://39.105.38.48/images/2019/05/09/proxy.png">
-<meta property="og:updated_time" content="2019-05-09T05:00:55.617Z">
+<meta property="og:image" content="http://39.105.38.48/images/2019/05/09/5.png">
+<meta property="og:updated_time" content="2019-05-09T07:19:41.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Proxy代理">
-<meta name="twitter:description" content="什么是代理？代理proxy：特殊的网络服务，允许一个网络终端（客户端）与另一个网络终端（服务器）进行非直接连接。  有什么用？ 通过设置缓存区，提高访问速度，其他用户访问相同信息时直接从缓冲区取出。 控制对内部资源的访问。 过滤内容，防御对代理服务器两边的攻击性访问。 隐藏真实IP，通过代理服务器隐藏自己的IP。 突破自身IP访问限制。 突破内容过滤机制限制。">
+<meta name="twitter:title" content="Proxy代理、http协议、URI与URL">
+<meta name="twitter:description" content="什么是代理？代理proxy：特殊的网络服务，允许一个网络终端（客户端）与另一个网络终端（服务器）进行非直接连接。  有什么用？ 通过设置缓存区，提高访问速度，其他用户访问相同信息时直接从缓冲区取出。 控制对内部资源的访问。 过滤内容，防御对代理服务器两边的攻击性访问。 隐藏真实IP，通过代理服务器隐藏自己的IP。 突破自身IP访问限制。 突破内容过滤机制限制。   Http超文本传输协议用于从万维">
 <meta name="twitter:image" content="http://39.105.38.48/images/2019/05/09/proxy.png">
   
   <link rel="stylesheet" href="/css/index.css">
@@ -36,22 +37,6 @@
   <div class="ctnWrap">
     <div class="icons">
       
-        
-          
-            <a href="https://user.qzone.qq.com/330620016?ADUIN=330620016&amp;ADSESSION=1557307915&amp;ADTAG=CLIENT.QQ.5611_MyTip.0&amp;ADPUBNO=26885&amp;source=namecardhoverstar" target="_blank" class="nav-icn iconfont icon-dribbble"></a>
-          
-        
-          
-            <a href="https://www.behance.net" target="_blank" class="nav-icn iconfont icon-behance"></a>
-          
-        
-          
-            <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn iconfont icon-lofter"></a>
-          
-        
-          
-            <a href="https://www.instagram.com" target="_blank" class="nav-icn iconfont icon-instagram"></a>
-          
         
           
             <a href="https://github.com/330620016" target="_blank" class="nav-icn iconfont icon-github"></a>
@@ -76,7 +61,7 @@
   </div>
 </nav>
     <div id="main"><section class="article">
-  <h2 class="title">Proxy代理</h2>
+  <h2 class="title">Proxy代理、http协议、URI与URL</h2>
   <p class="sub">May 9, 2019</p>
   <article class="content">
     <h2 id="什么是代理？"><a href="#什么是代理？" class="headerlink" title="什么是代理？"></a>什么是代理？</h2><p>代理proxy：特殊的网络服务，允许一个网络终端（客户端）与另一个网络终端（服务器）进行非直接连接。</p>
@@ -89,34 +74,33 @@
 <li>突破自身IP访问限制。</li>
 <li>突破内容过滤机制限制。</li>
 </ul>
+<hr>
+<h3 id="Http超文本传输协议"><a href="#Http超文本传输协议" class="headerlink" title="Http超文本传输协议"></a>Http超文本传输协议</h3><p>用于从万维网服务器传输超文本到本地浏览器的传送协议。浏览器作为HTTP客户端通过URL向HTTP服务器端即WEB服务器发送所有请求。WEB服务器接收到请求后向客户端发送响应信息。</p>
+<p>定义了与服务器交互的不同方法：GET, POST, PUT, DELETE。</p>
+<h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><ul>
+<li>支持客户/服务器模式</li>
+<li>简单快速：客户向服务器请求服务时，只需传送请求方法和路径</li>
+<li>灵活：HTTP允许传输任意类型的数据对象</li>
+<li>无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户应答后，即断开连接。节省传输时间</li>
+<li>无状态：无状态是指协议对于事物处理没有记忆能力</li>
+</ul>
+<p><a href="https://www.cnblogs.com/li0803/archive/2008/11/03/1324746.html" target="_blank" rel="noopener">更详细的HTTP传输方法</a></p>
+<hr>
+<h1 id="URI和URL的区别"><a href="#URI和URL的区别" class="headerlink" title="URI和URL的区别"></a>URI和URL的区别</h1><h5 id="URI，是uniform-resource-identifier，统一资源标识符，用来唯一的标识一个资源。"><a href="#URI，是uniform-resource-identifier，统一资源标识符，用来唯一的标识一个资源。" class="headerlink" title="URI，是uniform resource identifier，统一资源标识符，用来唯一的标识一个资源。"></a>URI，是uniform resource identifier，统一资源标识符，用来唯一的标识一个资源。</h5><p>Web上可用的每种资源如HTML文档、图像、视频片段、程序等都是一个来URI来定位的<br> URI一般由三部组成：<br> ①访问资源的命名机制<br> ②存放资源的主机名<br> ③资源自身的名称，由路径表示，着重强调于资源。</p>
+<h5 id="URL是uniform-resource-locator，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。"><a href="#URL是uniform-resource-locator，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。" class="headerlink" title="URL是uniform resource locator，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。"></a>URL是uniform resource locator，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。</h5><p>URL是Internet上用来描述信息资源的字符串，主要用在各种WWW客户程序和服务器程序上<br> 采用URL可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。URL一般由三部组成：<br> ①协议(或称为服务方式)<br> ②存有该资源的主机IP地址(有时也包括端口号)<br> ③主机资源的具体地址。如目录和文件名等</p>
+<p><img src="http://39.105.38.48/images/2019/05/09/5.png" alt></p>
 
   </article>
   <footer class="f-cf">
     
     
-      <a href="/2019/05/08/test/" class="link f-fr">第一次搭建个人博客——七小七⟶</a>
+      <a href="/2019/05/08/第一次搭建个人博客/" class="link f-fr">第一次搭建个人博客——七小七⟶</a>
     
   </footer>
 </section></div>
     <footer id="footer" class="f-cf">
   sgqdota755@gmail.com
   
-    
-      
-        · <a href="https://user.qzone.qq.com/330620016?ADUIN=330620016&amp;ADSESSION=1557307915&amp;ADTAG=CLIENT.QQ.5611_MyTip.0&amp;ADPUBNO=26885&amp;source=namecardhoverstar" target="_blank" class="nav-icn">Dribbble</a>
-      
-    
-      
-        · <a href="https://www.behance.net" target="_blank" class="nav-icn">Behance</a>
-      
-    
-      
-        · <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn">Lofter</a>
-      
-    
-      
-        · <a href="https://www.instagram.com" target="_blank" class="nav-icn">Instagram</a>
-      
     
       
         · <a href="https://github.com/330620016" target="_blank" class="nav-icn">GitHub</a>

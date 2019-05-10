@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>JVM、JRE、JDK | AmeChin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JVM是什么？JVM是Java Virtual Machine的缩写，它是一个虚构出来的计算机，是通过在实际计算机上仿真模拟各种计算机功能来实现的。JVM屏蔽了与具体操作系统平台相关的信息，使Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。JVM在执行字节码时，实际上最终还是把字节码解释成具体平台上的机器指令执行。 Java语言的一个非常重要的特点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM、JRE、JDK">
+<meta property="og:url" content="http://yoursite.com/2019/05/10/JVM/index.html">
+<meta property="og:site_name" content="AmeChin">
+<meta property="og:description" content="JVM是什么？JVM是Java Virtual Machine的缩写，它是一个虚构出来的计算机，是通过在实际计算机上仿真模拟各种计算机功能来实现的。JVM屏蔽了与具体操作系统平台相关的信息，使Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。JVM在执行字节码时，实际上最终还是把字节码解释成具体平台上的机器指令执行。 Java语言的一个非常重要的特点">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-10T07:36:36.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JVM、JRE、JDK">
+<meta name="twitter:description" content="JVM是什么？JVM是Java Virtual Machine的缩写，它是一个虚构出来的计算机，是通过在实际计算机上仿真模拟各种计算机功能来实现的。JVM屏蔽了与具体操作系统平台相关的信息，使Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。JVM在执行字节码时，实际上最终还是把字节码解释成具体平台上的机器指令执行。 Java语言的一个非常重要的特点">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">七小七 Ame Chin </a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/330620016" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">JVM、JRE、JDK</h2>
+  <p class="sub">May 10, 2019</p>
+  <article class="content">
+    <h3 id="JVM是什么？"><a href="#JVM是什么？" class="headerlink" title="JVM是什么？"></a>JVM是什么？</h3><p>JVM是Java Virtual Machine的缩写，它是一个虚构出来的计算机，是通过在实际计算机上仿真模拟各种计算机功能来实现的。JVM屏蔽了与具体操作系统平台相关的信息，使Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。JVM在执行字节码时，实际上最终还是把字节码解释成具体平台上的机器指令执行。</p>
+<p>Java语言的一个非常重要的特点就是与平台的无关性。而使用Java虚拟机是实现这一特点的关键。一般的高级语言如果要在不同的平台上运行，至少需要编译成不同的目标代码。而引入Java语言虚拟机后，Java语言在不同平台上运行时不需要重新编译。Java语言使用Java虚拟机屏蔽了与具体平台相关的信息，使得Java语言编译程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。Java虚拟机在执行字节码时，把字节码解释成具体平台上的机器指令执行。这就是Java的能够“一次编译，到处运行”的原因。</p>
+<h3 id="JDK，JRE，JVM的区别与联系"><a href="#JDK，JRE，JVM的区别与联系" class="headerlink" title="JDK，JRE，JVM的区别与联系"></a>JDK，JRE，JVM的区别与联系</h3><p>部分内容来自(<a href="https://blog.csdn.net/axi295309066/article/details/60469630" target="_blank" rel="noopener">CSDN</a>讲解的非常棒！)</p>
+<h4 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h4><p>JVM是整个Java实现跨平台的最核心部分。所有的Java程序都会首先被编译为.class类文件，这种文件可以再虚拟机上运行，也就是说class并不直接与机器的操作系统相对应，而是经过虚拟机间接与操作系统交互，由虚拟机将程序解释给本地系统执行。</p>
+<p>JVM有自己的指令集，并且在运行时操作不同的内存区域，JVM通过抽象操作系统和CPU结构，提供了一种与平台无关的代码执行方法。但是在一些其他方面，JVM的实现也是互不相同，每个操作系统有不用的实现方法，比如垃圾回收算法，线程调度算法。</p>
+<p>JVM 对上层的 Java 源文件是不关心的，它关注的只是由源文件生成的类文件（ class file ）。</p>
+<h4 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h4><p>JRE是指Java运行环境（Java runtime environment）。光有JVM还不能完成class的执行，因为在解释class的时候需要调用解释所需要的类库lib。在JDK的安装目录里你可以找到jre目录，里面有两个文件夹<strong>bin和lib，这里可以认为bin里的就是JVM，lib中则是JVM工作所需要的类库，而jvm和lib合起来就称为jre</strong>。所以，在你写完Java程序变异成.class之后，你可以把这个.class文件和jre一起打包发给朋友，这样你的朋友就可以运行你写的程序了。(jre里有运行.class的java.exe)</p>
+<p>JRE里面有一个 JVM ， JRE 与具体的 CPU 结构和操作系统有关，我们从 Sun 下载 JRE 的时候就看到了不同的各种版本，，同 JVM 一起组成 JRE 的还有 一些 API （如 awt ， swing 等）， JRE 是 运行 Java 程序必不可少的.</p>
+<h4 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h4><p>JDK是java开发工具包，基本上每个学java的人都会先在机器 上装一个JDK，那他都包含哪几部分呢？让我们看一下JDK的安装目录。在目录下面有 六个文件夹、一个src类库源码压缩包、和其他几个声明文件。其中，真正在运行java时起作用的 是以下四个文件夹：bin、include、lib、 jre。现在我们可以看出这样一个关系，JDK包含JRE，而JRE包 含JVM</p>
+<ul>
+<li>bin：最主要的是编译器(javac.exe)</li>
+<li>include：Java和JVM交互用的头文件</li>
+<li>lib：类库</li>
+<li>jre：Java运行环境</li>
+</ul>
+<p>注意：这里的bin、lib文件夹和jre里的bin、lib是 不同的，总的来说JDK是用于java程序的开发,而jre则是只能运行class而没有编译的功能。eclipse、idea等 其他IDE有自己的编译器而不是用JDK bin目录中自带的，所以在安装时你会发现他们只要求你 选中jre路径就ok了。</p>
+
+  </article>
+  <footer class="f-cf">
+    
+    
+      <a href="/2019/05/09/单链表反转/" class="link f-fr">单链表反转(递归与非递归)⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  sgqdota755@gmail.com
+  
+    
+      
+        · <a href="https://github.com/330620016" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Ame Chin</span>
+</footer>
+  </div>
+</body>
+</html>

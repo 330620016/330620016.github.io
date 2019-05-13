@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Java类加载机制，类的生命周期 | AmeChin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java类加载机制类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。 类加载器并不需要等到某个类被“首次主动使用”时再加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java类加载机制，类的生命周期">
+<meta property="og:url" content="http://yoursite.com/2019/05/10/jvm-2/index.html">
+<meta property="og:site_name" content="AmeChin">
+<meta property="og:description" content="Java类加载机制类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。 类加载器并不需要等到某个类被“首次主动使用”时再加">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://39.105.38.48/images/2019/05/10/jvm.png">
+<meta property="og:updated_time" content="2019-05-13T09:25:24.217Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java类加载机制，类的生命周期">
+<meta name="twitter:description" content="Java类加载机制类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。 类加载器并不需要等到某个类被“首次主动使用”时再加">
+<meta name="twitter:image" content="http://39.105.38.48/images/2019/05/10/jvm.png">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">七小七 Ame Chin </a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/330620016" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">Java类加载机制，类的生命周期</h2>
+  <p class="sub">May 10, 2019</p>
+  <article class="content">
+    <p><img src="http://39.105.38.48/images/2019/05/10/jvm.png" alt></p>
+<h3 id="Java类加载机制"><a href="#Java类加载机制" class="headerlink" title="Java类加载机制"></a>Java类加载机制</h3><p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在<strong>运行时数据区</strong>的<strong>方法区</strong>内，然后在<strong>堆区</strong>创建一个<code>java.lang.Class</code>对象，用来封装类在<strong>方法区内的数据结构</strong>。类的加载的最终产品是<strong>位于堆区的Class对象</strong>，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</p>
+<p>类加载器并不需要等到某个类被“首次主动使用”时再加载它，JVM规范允许类加载器在预料某个类将要被使用时就预先加载它，如果在预先加载的过程中遇到了.class文件缺失或存在错误，类加载器必须在程序首次主动使用该类时才报告错误（’LinkageError’错误）如果这个类一直没有被程序主动使用，那么类加载器就不会报告错误</p>
+<p>在加载阶段，虚拟机需要完成以下三件事情：</p>
+<ol>
+<li>通过一个类的全限定名来获取其定义的二进制字节流</li>
+<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构</li>
+<li>在Java堆中生成一个代表这个类的 <code>java.lang.Class</code>对象，作为对方法区中这些数据的访问入口</li>
+</ol>
+<p>加载阶段完成后，虚拟机外部的二进制字节流就按照虚拟机所需的格式存储在方法区之中，而且在Java堆中也创建一个 <code>java.lang.Class</code>类的对象，这样便可以通过该对象访问方法区中的这些数据。</p>
+<h3 id="类的生命周期"><a href="#类的生命周期" class="headerlink" title="类的生命周期"></a>类的生命周期</h3><p>加载，验证，准备，解析，初始化</p>
+<p>解析发生的时间不一定，以上顺序是按照开始顺序，这些阶段通常互相交叉地混合进行</p>
+<p>验证：确保被加载的类的正确性（非常重要但不是必须的，因为对程序运行期没影响）</p>
+<p>准备：为类的静态变量分配内存，并将其初始化为默认值</p>
+<p>解析：把类中的符号引用转换为直接引用</p>
+<p>初始化：为类的静态变量赋予正确的初始值，JVM负责对类进行初始化，主要对类变量进行初始化</p>
+<p>结束生命周期</p>
+<p>部分内容来自<a href="https://zhuanlan.zhihu.com/p/34426768" target="_blank" rel="noopener">知乎</a></p>
+
+  </article>
+  <footer class="f-cf">
+    
+    
+      <a href="/2019/05/10/JVM/" class="link f-fr">JVM、JRE、JDK⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  sgqdota755@gmail.com
+  
+    
+      
+        · <a href="https://github.com/330620016" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Ame Chin</span>
+</footer>
+  </div>
+</body>
+</html>

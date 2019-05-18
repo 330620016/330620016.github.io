@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>JVM内存结构 | AmeChin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java堆(Heap)对大多数应用，Java堆是Java虚拟机所管理的内存中最大的一块。被所有线程共享的区域。在虚拟机启动时创建。唯一目的是存放对象实例，几乎所有的对象实例都在这里分配内存。 Java堆是垃圾收集管理的主要区域，很多时候也被称为”GC堆”。如果从内存回收的角度看，由于现在收集器基本都是采用的分代收集算法，所以Java堆中还可以细分为：新生代和老年代；再细致一点的有Eden空间、F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM内存结构">
+<meta property="og:url" content="http://yoursite.com/2019/05/13/jvm-3/index.html">
+<meta property="og:site_name" content="AmeChin">
+<meta property="og:description" content="Java堆(Heap)对大多数应用，Java堆是Java虚拟机所管理的内存中最大的一块。被所有线程共享的区域。在虚拟机启动时创建。唯一目的是存放对象实例，几乎所有的对象实例都在这里分配内存。 Java堆是垃圾收集管理的主要区域，很多时候也被称为”GC堆”。如果从内存回收的角度看，由于现在收集器基本都是采用的分代收集算法，所以Java堆中还可以细分为：新生代和老年代；再细致一点的有Eden空间、F">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://39.105.38.48/images/2019/05/10/jvm.png">
+<meta property="og:updated_time" content="2019-05-14T14:19:01.860Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JVM内存结构">
+<meta name="twitter:description" content="Java堆(Heap)对大多数应用，Java堆是Java虚拟机所管理的内存中最大的一块。被所有线程共享的区域。在虚拟机启动时创建。唯一目的是存放对象实例，几乎所有的对象实例都在这里分配内存。 Java堆是垃圾收集管理的主要区域，很多时候也被称为”GC堆”。如果从内存回收的角度看，由于现在收集器基本都是采用的分代收集算法，所以Java堆中还可以细分为：新生代和老年代；再细致一点的有Eden空间、F">
+<meta name="twitter:image" content="http://39.105.38.48/images/2019/05/10/jvm.png">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">七小七 Ame Chin </a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/330620016" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">JVM内存结构</h2>
+  <p class="sub">May 13, 2019</p>
+  <article class="content">
+    <p><img src="http://39.105.38.48/images/2019/05/10/jvm.png" alt></p>
+<h4 id="Java堆-Heap"><a href="#Java堆-Heap" class="headerlink" title="Java堆(Heap)"></a>Java堆(Heap)</h4><p>对大多数应用，Java堆是Java虚拟机所管理的内存中最大的一块。被所有线程共享的区域。在虚拟机启动时创建。<strong>唯一目的是存放对象实例，几乎所有的对象实例都在这里分配内存。</strong></p>
+<p>Java堆是垃圾收集管理的主要区域，很多时候也被称为”GC堆”。如果从内存回收的角度看，由于现在收集器基本都是采用的分代收集算法，所以Java堆中还可以细分为：新生代和老年代；再细致一点的有Eden空间、From Survivor空间、To Survivor空间等。</p>
+<p>Java堆可以处于物理不连续的内存，逻辑连续即可。实现时可以实现为固定大小或者可扩展的，主流虚拟机都是可扩展。</p>
+<p>如果在堆中没有内存完成实例分配，并且堆无法扩展时，将会抛出OutOfMemoryError异常。</p>
+<h4 id="方法区-Method-Area"><a href="#方法区-Method-Area" class="headerlink" title="方法区(Method Area)"></a>方法区(Method Area)</h4><p>方法区与堆一样，时线程共享的内存区域。<strong>用于存储已被虚拟机加载的类信息，常量，静态变量，即时编译器编译后的代码等数据。</strong></p>
+
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2019/05/15/Conversational AI/" class="link f-fl">⟵SAP Conversational AI</a>
+    
+    
+      <a href="/2019/05/10/jvm-2/" class="link f-fr">Java类加载机制，类的生命周期⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  sgqdota755@gmail.com
+  
+    
+      
+        · <a href="https://github.com/330620016" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Ame Chin</span>
+</footer>
+  </div>
+</body>
+</html>
